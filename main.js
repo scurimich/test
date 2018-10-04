@@ -5,8 +5,9 @@ $(function() {
 
   var prevTouchPosition;
 
-  $(window).on('mousewheel touchmove wheel', function(e) {
+  $(document).on('mousewheel touchmove wheel', function(e) {
     e.stopPropagation();
+    e.preventDefault();
     if (body.hasClass('wheel-prevented')) return;
     var direction = (e.originalEvent.wheelDelta || -e.originalEvent.deltaY)
       || (e.pageY - prevTouchPosition || e.changedTouches[0].pageY - prevTouchPosition);
@@ -31,11 +32,6 @@ $(function() {
   $(document).on('touchend mouseup', function() {
     prevTouchPosition = NaN;
   });
-
-  $(document).on('touchmove', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-  })
 
   $(document).on('click touchend', '.js-scroll', function() {
     moveScreen('top', -1);
