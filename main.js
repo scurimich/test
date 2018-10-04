@@ -34,6 +34,7 @@ $(function() {
 
   $(document).on('touchmove', function(e) {
     e.preventDefault();
+    e.stopPropagation();
   })
 
   $(document).on('click touchend', '.js-scroll', function() {
