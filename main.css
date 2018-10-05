@@ -4,13 +4,13 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-body {
   touch-action: none;
 }
 
 .container {
+  position: fixed;
+  top: 0;
+  left: 0;
   transition: transform .6s;
   transform: translate(0, 0);
 }
