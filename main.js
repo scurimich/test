@@ -8,6 +8,7 @@ $(function() {
   $(document).on('mousewheel touchmove wheel', function(e) {
     e.stopPropagation();
     e.preventDefault();
+    $(window).scrollTop(0);
     if (body.hasClass('wheel-prevented')) return;
     var direction = (e.originalEvent.wheelDelta || -e.originalEvent.deltaY)
       || (e.pageY - prevTouchPosition || e.changedTouches[0].pageY - prevTouchPosition);
